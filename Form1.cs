@@ -29,7 +29,7 @@ namespace SebraOut
         private void Form1_Load(object sender, EventArgs e)
         {
             Load_Muro();
-            
+            Load_Bloque();
 
         }
 
@@ -38,13 +38,23 @@ namespace SebraOut
             var psc = LeerArchivo("Muro_Coordenadas");
             for (int i = 0; i < psc.GetLength(0); i++)
             {
-                Bloque muro = new Bloque(psc[i, 0], psc[i, 1]);
+                Bloque muro = new Bloque(psc[i, 1], psc[i, 0], "Pared_2");
                 Muros.Add(muro);
                 this.Controls.Add(muro.Img_Element);
             }
 
         }
+        private void Load_Bloque()
+        {
+            var psc = LeerArchivo("Bloque_Coordenadas");
+            for (int i = 0; i < psc.GetLength(0); i++)
+            {
+                Bloque bloque = new Bloque(psc[i, 0], psc[i, 1],"boque");
+                Bloques.Add(bloque);
+                this.Controls.Add(bloque.Img_Element);
+            }
 
+        }
 
         private int[,] LeerArchivo(string nombreArchivo)
         {

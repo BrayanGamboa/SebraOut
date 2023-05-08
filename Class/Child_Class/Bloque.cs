@@ -8,7 +8,7 @@ namespace SebraOut
 {
     internal class Bloque : Elemento_Grafico
     {
-        public Bloque(int x, int y) : base(x, y, "Pared_2", 28, 28)
+        public Bloque(int x, int y,string nombre ) : base(x, y,nombre , 20, 20)
         {
 
         }

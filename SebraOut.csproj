@@ -121,5 +121,20 @@
   <ItemGroup>
     <None Include="Bloque_Coordenadas.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloqueAmarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloqueAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloqueMorado .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloqueRojo .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloqueVerde.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
