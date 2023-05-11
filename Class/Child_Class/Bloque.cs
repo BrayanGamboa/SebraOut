@@ -8,8 +8,15 @@ namespace SebraOut
 {
     internal class Bloque : Elemento_Grafico
     {
-        public Bloque(int x, int y,string nombre ) : base(x, y,nombre , 20, 20)
+        private int dureza;
+        
+
+        public int Dureza { get => dureza; set => dureza = value; }
+
+
+        public Bloque(int x, int y, string nombre, int height, int width, int dureza) : base(x, y, nombre, height, width)
         {
+            this.Dureza = dureza;
 
         }
 

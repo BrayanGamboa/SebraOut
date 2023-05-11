@@ -64,18 +64,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -92,7 +92,7 @@
     <None Include="Resources\arcada.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\boque.png" />
+    <None Include="Resources\bloque.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\circulo.png" />
@@ -122,19 +122,25 @@
     <None Include="Bloque_Coordenadas.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BloqueAmarillo.png" />
+    <None Include="Resources\amarillo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BloqueAzul.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BloqueMorado .png" />
+    <None Include="Resources\BloqueMorado.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BloqueRojo .png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BloqueVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bloque_Amarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bloque_Rojo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

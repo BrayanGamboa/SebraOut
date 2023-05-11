@@ -16,20 +16,21 @@ namespace SebraOut
         Elemento_Grafico elemento_Grafico;
         List<Elemento_Grafico> Bloques = new List<Elemento_Grafico>();
         List<Elemento_Grafico> Muros = new List<Elemento_Grafico>();
-
+        Paleta paleta;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        
+
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Load_Muro();
             Load_Bloque();
+            Load_Paleta();
 
         }
 
@@ -38,18 +39,26 @@ namespace SebraOut
             var psc = LeerArchivo("Muro_Coordenadas");
             for (int i = 0; i < psc.GetLength(0); i++)
             {
-                Bloque muro = new Bloque(psc[i, 1], psc[i, 0], "Pared_2");
+                Bloque muro = new Bloque(psc[i, 1], psc[i, 0], "Pared_2", 20, 20, 300);
                 Muros.Add(muro);
                 this.Controls.Add(muro.Img_Element);
             }
 
         }
+
+        private void Load_Paleta() {
+            paleta = new Paleta(120, 380, "Linea");
+            this.Controls.Add(paleta.Img_Element);
+        }
         private void Load_Bloque()
         {
+            Random Num_Random = new Random();
             var psc = LeerArchivo("Bloque_Coordenadas");
             for (int i = 0; i < psc.GetLength(0); i++)
             {
-                Bloque bloque = new Bloque(psc[i, 0], psc[i, 1],"boque");
+                int num_Aleatorio = Num_Random.Next(1, 6);
+
+                Bloque bloque = new Bloque(psc[i, 0], psc[i, 1], Indicador_Nombre(num_Aleatorio),16 ,20, num_Aleatorio*2);
                 Bloques.Add(bloque);
                 this.Controls.Add(bloque.Img_Element);
             }
@@ -74,6 +83,55 @@ namespace SebraOut
 
         }
 
+        private string Indicador_Nombre(int posicion)
+        {
+            //Es la encargada de traducir de un número int a un nombre en especial
 
+            Dictionary<int, string> nombreImg = new Dictionary<int, string>
+            {
+                {1, "Bloque_Amarillo"},
+                {2, "Bloque_Verde"},
+                {3, "Bloque_Azul"},
+                {4, "Bloque_Rojo"},
+                {5, "Bloque_Morado"}
+            };
+
+
+            return nombreImg[posicion];
+        }
+
+        private int Indicador_Dureza( int num)
+        {
+            //Es la encargada de traducir de un número int a un nombre en especial
+
+            Dictionary<int, int> dureza = new Dictionary<int, int>
+            {
+                {1, 2},
+                {2, 4},
+                {3, 6},
+                {4, 8},
+                {5, 10 }
+            };
+
+
+            return dureza[num];
+
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            c = char.ToUpper(c);
+            if (c == 'D')
+            {
+                paleta.MoverRight();
+            }
+            else if (c == 'A')
+            {
+
+
+                paleta.MoverLeft();
+            }
+        }
     }
 }

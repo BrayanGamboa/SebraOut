@@ -73,15 +73,35 @@ namespace SebraOut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arcada1 {
+        internal static System.Drawing.Bitmap Bloque {
             get {
-                object obj = ResourceManager.GetObject("arcada1", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloque", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 20:20,20:40,20:60,20:80,20:100,20:120,20:140,20:160,20:180,20:200,20:220,20:240,20:260,20:280,20:300,20:320,40:20,40:320,60:20,60:320,80:20,80:320,100:20,100:320,120:20,120:320,140:20,140:320,160:20,160:320,180:20,180:320,200:20,200:320,220:20,220:320,240:20,240:320,260:20,260:320,280:20,280:320,300:20,300:320,320:20,320:320,340:20,340:320,360:20,360:320,380:20,380:320.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloque_Amarillo {
+            get {
+                object obj = ResourceManager.GetObject("Bloque_Amarillo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloque_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Bloque_Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 40:200,60:200,80:200,100:200,120:200,140:200,160:200,180:200,200:200,220:200,240:200,260:200,280:200,300:200,60:180,80:180,100:180,120:180,140:180,160:180,180:180,200:180,220:180,240:180,260:180,280:180,80:160,100:160,120:160,140:160,160:160,180:160,200:160,220:160,240:160,260:160,100:140,120:140,140:140,160:140,180:140,200:140,220:140,240:140,120:120,140:120,160:120,180:120,200:120,220:120,140:100,160:100,180:100,200:100,160:80,180:80.
         /// </summary>
         internal static string Bloque_Coordenadas {
             get {
@@ -92,9 +112,9 @@ namespace SebraOut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap boque {
+        internal static System.Drawing.Bitmap Bloque_Morado {
             get {
-                object obj = ResourceManager.GetObject("boque", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloque_Morado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -102,9 +122,29 @@ namespace SebraOut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap circulo {
+        internal static System.Drawing.Bitmap Bloque_Rojo {
             get {
-                object obj = ResourceManager.GetObject("circulo", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloque_Rojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bloque_Verde {
+            get {
+                object obj = ResourceManager.GetObject("Bloque_Verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Circulo {
+            get {
+                object obj = ResourceManager.GetObject("Circulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -151,29 +191,9 @@ namespace SebraOut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pared {
-            get {
-                object obj = ResourceManager.GetObject("pared", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Pared_2 {
             get {
                 object obj = ResourceManager.GetObject("Pared_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pared3 {
-            get {
-                object obj = ResourceManager.GetObject("pared3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
