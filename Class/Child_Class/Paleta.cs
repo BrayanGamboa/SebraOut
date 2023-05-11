@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace SebraOut
 {
-    internal class Paleta : Elemento_Grafico
+    public class Paleta : Elemento_Grafico
     {
-        private int velocidad;
+        private int velocidad = 6;
 
         public int Velocidad { get => velocidad; set => velocidad = value;}
 
-        public Paleta(int x, int y, string nombre, int h, int w, int velocidad) : base(x, y, nombre, h, w)
+        public Paleta(int x, int y, string nombre) : base(x, y, nombre, 15, 75)
         {
-            this.Velocidad = velocidad;
+            
         }
 
-        public void Move_left(){
-            Psc_X -= 1;
-        }
-
-        public void Move_right()
+        public void MoverRight()
         {
-            Psc_X += 1;
+            Psc_X += velocidad;
+            Change_psc(Psc_X, Psc_Y);
         }
 
+        public void MoverLeft()
+        {
+            Psc_X -= velocidad;
+            Change_psc(Psc_X, Psc_Y);
+        }
     }
 }

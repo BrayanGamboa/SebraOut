@@ -4,11 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace SebraOut
 {
-    internal class Elemento_Grafico
+    public class Elemento_Grafico
     {
         private int psc_X, psc_Y;
         private PictureBox img_Element;
