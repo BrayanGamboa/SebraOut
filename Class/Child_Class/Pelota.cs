@@ -8,15 +8,15 @@ namespace SebraOut
 {
     internal class Pelota : Elemento_Grafico
     {
-        private int velocidad;
+        private int velocidad = 5;
         
-        public int Velocidad { get => velocidad; set => velocidad = value; }
+        
 
 
 
-        public Pelota(int x, int y, string nombre, int h, int w, int velocidad) : base(x, y, nombre, h, w)
+        public Pelota(int x, int y, string nombre) : base(x, y, nombre, 20, 20)
         {
-            this.Velocidad= velocidad;
+            
         }
 
         public float Calculate_Angulo(int x, int y)

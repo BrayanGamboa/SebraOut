@@ -13,10 +13,11 @@ namespace SebraOut
     public partial class Form1 : Form
     {
 
-        Elemento_Grafico elemento_Grafico;
+
         List<Elemento_Grafico> Bloques = new List<Elemento_Grafico>();
         List<Elemento_Grafico> Muros = new List<Elemento_Grafico>();
         Paleta paleta;
+        Pelota pelota;
 
         public Form1()
         {
@@ -31,7 +32,7 @@ namespace SebraOut
             Load_Muro();
             Load_Bloque();
             Load_Paleta();
-
+            Load_Pelota();
         }
 
         private void Load_Muro()
@@ -46,10 +47,12 @@ namespace SebraOut
 
         }
 
-        private void Load_Paleta() {
+        private void Load_Paleta()
+        {
             paleta = new Paleta(120, 380, "Linea");
             this.Controls.Add(paleta.Img_Element);
         }
+
         private void Load_Bloque()
         {
             Random Num_Random = new Random();
@@ -58,11 +61,17 @@ namespace SebraOut
             {
                 int num_Aleatorio = Num_Random.Next(1, 6);
 
-                Bloque bloque = new Bloque(psc[i, 0], psc[i, 1], Indicador_Nombre(num_Aleatorio),16 ,20, num_Aleatorio*2);
+                Bloque bloque = new Bloque(psc[i, 0], psc[i, 1], Indicador_Nombre(num_Aleatorio), 16, 20, num_Aleatorio * 2);
                 Bloques.Add(bloque);
                 this.Controls.Add(bloque.Img_Element);
             }
 
+        }
+
+        private void Load_Pelota()
+        {
+            pelota = new Pelota(160, 360, "Circulo");
+            this.Controls.Add(pelota.Img_Element);
         }
 
         private int[,] LeerArchivo(string nombreArchivo)
@@ -100,37 +109,27 @@ namespace SebraOut
             return nombreImg[posicion];
         }
 
-        private int Indicador_Dureza( int num)
-        {
-            //Es la encargada de traducir de un número int a un nombre en especial
-
-            Dictionary<int, int> dureza = new Dictionary<int, int>
-            {
-                {1, 2},
-                {2, 4},
-                {3, 6},
-                {4, 8},
-                {5, 10 }
-            };
-
-
-            return dureza[num];
-
-        }
-
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char c = e.KeyChar;
+            var c = e.KeyChar;
             c = char.ToUpper(c);
-            if (c == 'D')
-            {
-                paleta.MoverRight();
-            }
-            else if (c == 'A')
-            {
 
-
-                paleta.MoverLeft();
+            switch (c)
+            {
+                case 'D':
+                    if (paleta.Evaluar_Colision(Muros))
+                        paleta.Rebote_Left(20);
+                    else
+                        paleta.Mover_Right();
+                    break;
+                case 'A':
+                    if (paleta.Evaluar_Colision(Muros))
+                        paleta.Rebote_Right(20);
+                    else
+                        paleta.Mover_Left();
+                    break;
+                default:
+                    break;
             }
         }
     }
