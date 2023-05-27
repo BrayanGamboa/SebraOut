@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SebraOut
 {
-    internal class Bloque : Elemento_Grafico
+    public class Bloque : Elemento_Grafico
     {
         private int dureza;
         

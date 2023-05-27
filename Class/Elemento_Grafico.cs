@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; 
+using System.Windows.Forms;
 
 namespace SebraOut
 {
@@ -40,10 +40,10 @@ namespace SebraOut
             this.Img_Element.Location = new Point(x, y);
         }
 
+
         public Rectangle Get_Rectangle()
         {
-            return Img_Element.Bounds;
-
+            return new Rectangle(Psc_X, Psc_Y, Img_Element.Width, Img_Element.Height);
         }
 
 

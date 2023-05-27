@@ -10,26 +10,18 @@ using System.Windows.Forms;
 
 namespace SebraOut
 {
-    public partial class FormInicio : Form
+    public partial class Win : Form
     {
-        public FormInicio()
+        public Win()
         {
             InitializeComponent();
         }
 
-        private void btnJugar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form1 Juego = new Form1();
-            Juego.Show();
+            FormInicio form = new FormInicio();
+            form.Show();
             this.Hide();
         }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
-   
     }
 }

@@ -52,31 +52,58 @@
   <ItemGroup>
     <Compile Include="Class\Child_Class\Bloque.cs" />
     <Compile Include="Class\Elemento_Grafico.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Win.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Win.Designer.cs">
+      <DependentUpon>Win.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GameOver.Designer.cs">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Nivel1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Nivel1.Designer.cs">
+      <DependentUpon>Nivel1.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Child_Class\Juego.cs" />
     <Compile Include="Class\Child_Class\Paleta.cs" />
     <Compile Include="Class\Child_Class\Pelota.cs" />
     <Compile Include="Class\Program.cs" />
-    <Compile Include="FormInicio.cs">
+    <Compile Include="Forms\FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicio.Designer.cs">
+    <Compile Include="Forms\FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Nivel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Nivel2.Designer.cs">
+      <DependentUpon>Nivel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Win.resx">
+      <DependentUpon>Win.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInicio.resx">
+    <EmbeddedResource Include="Forms\GameOver.resx">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Nivel1.resx">
+      <DependentUpon>Nivel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Nivel2.resx">
+      <DependentUpon>Nivel2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -102,9 +129,6 @@
     <None Include="Resources\arcada.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arcada.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bloque.png" />
   </ItemGroup>
   <ItemGroup>
@@ -120,31 +144,13 @@
     <None Include="Resources\Linea.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pared.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Pared_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pared3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Muro_Coordenadas.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Bloque_Coordenadas.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\amarillo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BloqueAzul.png" />
+    <None Include="Resources\Bloque_Azul.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BloqueMorado.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BloqueRojo .png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BloqueVerde.png" />
@@ -157,6 +163,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\you win.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coordenadas\Bloque_Coordenadas_N1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coordenadas\Bloque_Coordenadas_N2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coordenadas\Muro_Coordenadas.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

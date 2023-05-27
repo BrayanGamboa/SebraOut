@@ -128,10 +128,13 @@
     <value>..\Resources\Bloque_Amarillo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bloque_Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BloqueAzul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Bloque_Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bloque_Coordenadas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Bloque_Coordenadas.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="Bloque_Coordenadas_N1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coordenadas\Bloque_Coordenadas_N1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Bloque_Coordenadas_N2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coordenadas\Bloque_Coordenadas_N2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Bloque_Morado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BloqueMorado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,22 +148,31 @@
   <data name="Circulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="corazon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corazon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gameboy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameboy.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gameboy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameboy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GameOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Linea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Linea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Muro_Coordenadas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Muro_Coordenadas.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\Coordenadas\Muro_Coordenadas.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Pared_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pared_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="you_win" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\you win.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

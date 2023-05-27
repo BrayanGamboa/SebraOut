@@ -8,17 +8,26 @@ namespace SebraOut
 {
     public class Paleta : Elemento_Grafico
     {
-        private int velocidad = 5;
+        private int velocidad = 15;
 
         public Paleta(int x, int y, string nombre) : base(x, y, nombre, 15, 75)
         {
 
         }
 
+        public void Resetear()
+        {
+            Psc_X = 160; // Restablece la posición X de la pelota
+            Psc_Y = 380; // Restablece la posición Y de la pelota
+            velocidad = 6; // Restablece la velocidad de la pelota            
+            Change_psc(Psc_X, Psc_Y); // Actualiza la posición visual de la pelota
+        }
+
         public void Mover_Right()
         {
             Psc_X += velocidad;
             Change_psc(Psc_X, Psc_Y);
+            
         }
 
         public void Mover_Left()
@@ -38,9 +47,19 @@ namespace SebraOut
             Change_psc(Psc_X, Psc_Y);
         }
 
-
-
         public bool Evaluar_Colision(List<Elemento_Grafico> objetos)
+        {
+            for (int i = 0; i < objetos.Count; i++)
+            {
+                if (objetos[i].Get_Rectangle().IntersectsWith(this.Get_Rectangle()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Evaluar_Colision(List<Bloque> objetos)
         {
             for (int i = 0; i < objetos.Count; i++)
             {
