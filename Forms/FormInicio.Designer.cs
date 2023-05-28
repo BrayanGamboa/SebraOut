@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnPuntaje = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelLateral = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,18 +53,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSalir
+            // btnPuntaje
             // 
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalir.Location = new System.Drawing.Point(6, 0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(144, 54);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnPuntaje.FlatAppearance.BorderSize = 0;
+            this.btnPuntaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntaje.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPuntaje.Location = new System.Drawing.Point(6, 0);
+            this.btnPuntaje.Name = "btnPuntaje";
+            this.btnPuntaje.Size = new System.Drawing.Size(144, 54);
+            this.btnPuntaje.TabIndex = 1;
+            this.btnPuntaje.Text = "PUNTAJE";
+            this.btnPuntaje.UseVisualStyleBackColor = true;
+            this.btnPuntaje.Click += new System.EventHandler(this.btnPuntaje_Click);
             // 
             // label1
             // 
@@ -95,7 +95,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panel3.Controls.Add(this.btnSalir);
+            this.panel3.Controls.Add(this.btnPuntaje);
             this.panel3.Location = new System.Drawing.Point(0, 308);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
@@ -117,14 +117,15 @@
             // 
             this.BoxNivel.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BoxNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BoxNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxNivel.FormattingEnabled = true;
             this.BoxNivel.Items.AddRange(new object[] {
             "Nivel 1",
             "Nivel 2"});
-            this.BoxNivel.Location = new System.Drawing.Point(34, 37);
+            this.BoxNivel.Location = new System.Drawing.Point(12, 36);
             this.BoxNivel.Margin = new System.Windows.Forms.Padding(2);
             this.BoxNivel.Name = "BoxNivel";
-            this.BoxNivel.Size = new System.Drawing.Size(92, 21);
+            this.BoxNivel.Size = new System.Drawing.Size(122, 28);
             this.BoxNivel.TabIndex = 2;
             // 
             // btnNivel
@@ -255,7 +256,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnPuntaje;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelLateral;
         private System.Windows.Forms.Panel panel1;

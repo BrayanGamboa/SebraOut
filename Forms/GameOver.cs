@@ -27,5 +27,6 @@ namespace SebraOut
             formInicio.Show();
             this.Hide();
         }
+        
     }
 }

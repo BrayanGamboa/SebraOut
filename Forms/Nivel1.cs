@@ -19,6 +19,7 @@ namespace SebraOut
         Paleta paleta;
         Pelota pelota;
         Juego juego = new Juego();
+        ConnectionDB connection = new ConnectionDB();
 
         public Nivel1()
         {
@@ -31,7 +32,7 @@ namespace SebraOut
             Load_Bloque();
             Load_Paleta();
             Load_Pelota();
-            timer1.Start();            
+            timer1.Start();
         }
 
         private void Load_Muro()
@@ -239,6 +240,7 @@ namespace SebraOut
                 GameOver gameOver = new GameOver();
                 gameOver.Show();
                 this.Hide();
+
             }
             else
             {
@@ -261,6 +263,13 @@ namespace SebraOut
             Nivel2 nivel2 = new Nivel2();
             nivel2.Show();
             this.Hide();
+        }
+
+        private void GuardarPuntos()
+        {
+            string email = MessageBox.Show("Por favor ingresa tu email:", "Email").ToString();
+            
+
         }
     }
 }

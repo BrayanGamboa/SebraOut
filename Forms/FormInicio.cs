@@ -40,12 +40,11 @@ namespace SebraOut
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnPuntaje_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            Puntaje puntaje = new Puntaje();
+            puntaje.Show();
+            this.Hide();
         }
-
-        
     }
 }
