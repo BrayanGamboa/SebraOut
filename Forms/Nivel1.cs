@@ -1,9 +1,11 @@
-﻿using System;
+﻿using PacmanGame;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +22,7 @@ namespace SebraOut
         Pelota pelota;
         Juego juego = new Juego();
         ConnectionDB connection = new ConnectionDB();
+        Audio audio = new Audio();
 
         public Nivel1()
         {
@@ -152,6 +155,7 @@ namespace SebraOut
             // Verifica las colisiones con la paleta
             if (pelota.Evaluar_Colision(paleta))
             {
+                audio.SeleccionarAudio(3);
                 // Cambia la dirección vertical de la pelota
                 pelota.CambiarDireccionY();
 
@@ -235,17 +239,19 @@ namespace SebraOut
         private void Perder()
         {
             juego.Num_Vidas--;
+            timer1.Stop();
+            audio.SeleccionarAudio(1);
             if (juego.Num_Vidas < 1)
-            {
-                timer1.Stop();
+            {                               
                 GameOver gameOver = new GameOver();
                 gameOver.Show();
                 this.Hide();
                 connection.New_Registro(juego.Puntaje);
-                MessageBox.Show($"Perdite, el puntaje obtenido fue de {juego.Puntaje}", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show($"Perdiste, el puntaje obtenido fue de {juego.Puntaje}", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
             else
             {
+                
                 this.Controls.Remove(paleta.Img_Element);
                 this.Controls.Remove(pelota.Img_Element);
                 Load_Paleta();
@@ -257,7 +263,8 @@ namespace SebraOut
         private void Ganar()
         {
             timer1.Stop();
-            MessageBox.Show("Feliitaciones pasaste al nivel 2", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            audio.SeleccionarAudio(2);
+            MessageBox.Show("Felicitaciones pasaste al nivel 2", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Nivel2 nivel2 = new Nivel2();
             nivel2.Show();
             this.Hide();

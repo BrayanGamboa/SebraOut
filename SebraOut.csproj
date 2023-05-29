@@ -102,6 +102,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Audio.cs" />
     <Compile Include="Class\Child_Class\Bloque.cs" />
     <Compile Include="Class\Elemento_Grafico.cs" />
     <Compile Include="Class\ConnectionDB.cs" />
@@ -248,6 +249,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game_Over.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rebote.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Win.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

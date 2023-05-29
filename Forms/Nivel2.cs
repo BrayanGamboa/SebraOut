@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PacmanGame;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace SebraOut
         Pelota pelota;
         Juego juego = new Juego();
         ConnectionDB connection = new ConnectionDB();
+        Audio audio = new Audio();  
         public Nivel2()
         {
             InitializeComponent();
@@ -161,6 +163,7 @@ namespace SebraOut
             // Verifica las colisiones con la paleta
             if (pelota.Evaluar_Colision(paleta))
             {
+                audio.SeleccionarAudio(3);
                 // Cambia la dirección vertical de la pelota
                 pelota.CambiarDireccionY();
 
@@ -225,10 +228,12 @@ namespace SebraOut
 
         private void Perder()
         {
+            timer1.Stop();
             juego.Num_Vidas--;
+            audio.SeleccionarAudio(1);
             if (juego.Num_Vidas < 1)
             {
-                timer1.Stop();
+                
                 connection.New_Registro(juego.Puntaje + 101);
                 MessageBox.Show($"Perdite, el puntaje obtenido fue de {juego.Puntaje + 101}", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 GameOver gameOver = new GameOver();
@@ -238,6 +243,7 @@ namespace SebraOut
             }
             else
             {
+                
                 this.Controls.Remove(paleta.Img_Element);
                 this.Controls.Remove(pelota.Img_Element);              
                 Load_Paleta();
@@ -249,6 +255,7 @@ namespace SebraOut
         private void Ganar()
         {
             timer1.Stop();
+            audio.SeleccionarAudio(2);
             connection.New_Registro(juego.Puntaje + 101);
             Win win = new Win();
             win.Show();
