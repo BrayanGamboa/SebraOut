@@ -44,7 +44,7 @@ namespace SebraOut
             }
         }
 
-        public int New_Usuario(Usuario usuario)
+        public int New_Registro(int puntos)
         {
             ManagerConnection();
 
@@ -52,42 +52,13 @@ namespace SebraOut
 
             try
             {
-                string query = "INSERT INTO Usuario(nombre, apellido, email, puntos) VALUES(@nombre,@apellido,@email, 0)";
+                string query = "INSERT INTO Usuario(puntaje) VALUES(@puntos)";
 
                 Command = new NpgsqlCommand(query, Connection);
 
                 
-                Command.Parameters.AddWithValue("@nombre", usuario.Nombre);
-                Command.Parameters.AddWithValue("@apellido", usuario.Apellido);
-                Command.Parameters.AddWithValue("@email", usuario.Email);
-
-                result = Command.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show($"Error: '{err.Message}'", "Error");
-            }
-            Connection.Close();
-
-            return result;
-
-        }
-
-        public int Update_Usuario(string correo, int puntos)
-        {
-            ManagerConnection();
-
-            int result = 0;
-
-            try
-            {
-                string query = $"UPDATE usuario SET puntos = @puntos WHERE email = @correo";
-
-                Command = new NpgsqlCommand(query, Connection);
-
-
                 Command.Parameters.AddWithValue("@puntos", puntos);
-                Command.Parameters.AddWithValue("@email", correo);                
+                
 
                 result = Command.ExecuteNonQuery();
             }
@@ -100,25 +71,26 @@ namespace SebraOut
             return result;
 
         }
-        public List<Usuario> List_Usuarios()
+
+        
+        public List<Puntos> List_Puntaje()
         {
             ManagerConnection();
             
-            List<Usuario> list = new List<Usuario>();
+            List<Puntos> list = new List<Puntos>();
             try
             {
-                string query = $"SELECT nombre, email, puntos FROM usuario";
+                string query = $"SELECT * FROM usuario ORDER BY puntaje desc";
 
 
                 Command = new NpgsqlCommand(query, Connection);
                 Reader = Command.ExecuteReader();
                 while (Reader.Read())
                 {
-                    Usuario usuario = new Usuario();
-                    usuario.Nombre = Reader.GetString(0);
-                    usuario.Email = Reader.GetString(1);
-                    usuario.Puntos = Reader.GetInt32(2);
-                    list.Add(usuario);
+                    Puntos puntos = new Puntos();
+                    puntos.Id = Reader.GetInt32(0);                    
+                    puntos.Puntaje = Reader.GetInt32(1);
+                    list.Add(puntos);
                 }
 
             }

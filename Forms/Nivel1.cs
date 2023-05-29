@@ -33,6 +33,7 @@ namespace SebraOut
             Load_Paleta();
             Load_Pelota();
             timer1.Start();
+            
         }
 
         private void Load_Muro()
@@ -240,36 +241,26 @@ namespace SebraOut
                 GameOver gameOver = new GameOver();
                 gameOver.Show();
                 this.Hide();
-
+                connection.New_Registro(juego.Puntaje);
+                MessageBox.Show($"Perdite, el puntaje obtenido fue de {juego.Puntaje}", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
             else
             {
                 this.Controls.Remove(paleta.Img_Element);
                 this.Controls.Remove(pelota.Img_Element);
-
-
-                // Restablece la posición y velocidad de lo objeto
-
                 Load_Paleta();
                 Load_Pelota();
                 timer1.Start();
-            }                        
+            }
         }
         
         private void Ganar()
         {
             timer1.Stop();
-            MessageBox.Show("Feliitaciones pasate al nivel 2", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            MessageBox.Show("Feliitaciones pasaste al nivel 2", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Nivel2 nivel2 = new Nivel2();
             nivel2.Show();
             this.Hide();
-        }
-
-        private void GuardarPuntos()
-        {
-            string email = MessageBox.Show("Por favor ingresa tu email:", "Email").ToString();
-            
-
         }
     }
 }

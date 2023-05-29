@@ -19,25 +19,11 @@ namespace SebraOut
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            if (BoxNivel.Text == "")
-            {
-                MessageBox.Show("Seleccione el nivel de difiultad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                if (BoxNivel.Text == "Nivel 1")
-                {
-                    Nivel1 Juego = new Nivel1();
-                    Juego.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    Nivel2 Juego = new Nivel2();
-                    Juego.Show();
-                    this.Hide();
-                }
-            }
+
+            Nivel1 Juego = new Nivel1();
+            Juego.Show();
+            this.Hide();
+
         }
 
         private void btnPuntaje_Click(object sender, EventArgs e)
@@ -46,5 +32,6 @@ namespace SebraOut
             puntaje.Show();
             this.Hide();
         }
-    }
+    }    
 }
+

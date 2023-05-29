@@ -17,7 +17,7 @@ namespace SebraOut
         Paleta paleta;
         Pelota pelota;
         Juego juego = new Juego();
-
+        ConnectionDB connection = new ConnectionDB();
         public Nivel2()
         {
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace SebraOut
             this.Controls.Add(paleta.Img_Element);
 
         }
-        
+
         private void Load_Bloque()
         {
             Random Num_Random = new Random();
@@ -132,8 +132,6 @@ namespace SebraOut
             }
         }
 
-       
-
         private float CalcularAnguloRebote(Pelota pelota, Paleta paleta)
         {
             //Calcula la posición relativa de impacto en la paleta (valor entre -1 y 1)
@@ -146,38 +144,6 @@ namespace SebraOut
             float anguloRebote = posicionImpacto * anguloMaximo;
 
             return anguloRebote;
-        }
-
-        private void Perder()
-        {
-            juego.Num_Vidas--;
-            if (juego.Num_Vidas < 1)
-            {
-                timer1.Stop();
-                GameOver gameOver = new GameOver();
-                gameOver.Show();
-                this.Hide();
-            }
-            else
-            {
-                this.Controls.Remove(paleta.Img_Element);
-                this.Controls.Remove(pelota.Img_Element);
-
-
-                // Restablece la posición y velocidad de lo objeto
-
-                Load_Paleta();
-                Load_Pelota();
-                timer1.Start();
-            }
-        }
-
-        private void Ganar()
-        {
-            timer1.Stop();
-            Win win = new Win();
-            win.Show();
-            this.Hide();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -236,9 +202,6 @@ namespace SebraOut
                 }
             }
 
-
-
-
             // Verifica las colisiones con los muros
             if (pelota.Evaluar_Colision(Muros))
             {
@@ -258,6 +221,38 @@ namespace SebraOut
             {
                 Ganar();
             }
+        }
+
+        private void Perder()
+        {
+            juego.Num_Vidas--;
+            if (juego.Num_Vidas < 1)
+            {
+                timer1.Stop();
+                connection.New_Registro(juego.Puntaje + 101);
+                MessageBox.Show($"Perdite, el puntaje obtenido fue de {juego.Puntaje + 101}", "Información", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                GameOver gameOver = new GameOver();
+                gameOver.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                this.Controls.Remove(paleta.Img_Element);
+                this.Controls.Remove(pelota.Img_Element);              
+                Load_Paleta();
+                Load_Pelota();
+                timer1.Start();
+            }
+        }
+
+        private void Ganar()
+        {
+            timer1.Stop();
+            connection.New_Registro(juego.Puntaje + 101);
+            Win win = new Win();
+            win.Show();
+            this.Hide();
         }
     }
 }

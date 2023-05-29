@@ -33,9 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PanelLateral = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.PanelNivel = new System.Windows.Forms.Panel();
-            this.BoxNivel = new System.Windows.Forms.ComboBox();
-            this.btnNivel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnJugar = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
@@ -45,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelLateral.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.PanelNivel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,7 +78,6 @@
             this.PanelLateral.AutoScroll = true;
             this.PanelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.PanelLateral.Controls.Add(this.panel3);
-            this.PanelLateral.Controls.Add(this.PanelNivel);
             this.PanelLateral.Controls.Add(this.panel1);
             this.PanelLateral.Controls.Add(this.PanelLogo);
             this.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left;
@@ -96,57 +91,17 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panel3.Controls.Add(this.btnPuntaje);
-            this.panel3.Location = new System.Drawing.Point(0, 308);
+            this.panel3.Location = new System.Drawing.Point(0, 248);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 54);
             this.panel3.TabIndex = 2;
             // 
-            // PanelNivel
-            // 
-            this.PanelNivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.PanelNivel.Controls.Add(this.BoxNivel);
-            this.PanelNivel.Controls.Add(this.btnNivel);
-            this.PanelNivel.Location = new System.Drawing.Point(2, 187);
-            this.PanelNivel.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelNivel.Name = "PanelNivel";
-            this.PanelNivel.Size = new System.Drawing.Size(148, 80);
-            this.PanelNivel.TabIndex = 2;
-            // 
-            // BoxNivel
-            // 
-            this.BoxNivel.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BoxNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BoxNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxNivel.FormattingEnabled = true;
-            this.BoxNivel.Items.AddRange(new object[] {
-            "Nivel 1",
-            "Nivel 2"});
-            this.BoxNivel.Location = new System.Drawing.Point(12, 36);
-            this.BoxNivel.Margin = new System.Windows.Forms.Padding(2);
-            this.BoxNivel.Name = "BoxNivel";
-            this.BoxNivel.Size = new System.Drawing.Size(122, 28);
-            this.BoxNivel.TabIndex = 2;
-            // 
-            // btnNivel
-            // 
-            this.btnNivel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNivel.FlatAppearance.BorderSize = 0;
-            this.btnNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNivel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNivel.Location = new System.Drawing.Point(0, 0);
-            this.btnNivel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNivel.Name = "btnNivel";
-            this.btnNivel.Size = new System.Drawing.Size(148, 32);
-            this.btnNivel.TabIndex = 1;
-            this.btnNivel.Text = "NIVELES";
-            this.btnNivel.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panel1.Controls.Add(this.btnJugar);
-            this.panel1.Location = new System.Drawing.Point(0, 99);
+            this.panel1.Location = new System.Drawing.Point(0, 146);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 54);
@@ -157,7 +112,7 @@
             this.btnJugar.FlatAppearance.BorderSize = 0;
             this.btnJugar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJugar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnJugar.Location = new System.Drawing.Point(3, 3);
+            this.btnJugar.Location = new System.Drawing.Point(6, 7);
             this.btnJugar.Name = "btnJugar";
             this.btnJugar.Size = new System.Drawing.Size(144, 44);
             this.btnJugar.TabIndex = 0;
@@ -240,10 +195,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Inicio";
             this.PanelLateral.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.PanelNivel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
             this.PanelLogo.PerformLayout();
@@ -262,13 +216,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel PanelNivel;
         private System.Windows.Forms.Button btnJugar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label txtNombres;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnNivel;
-        private System.Windows.Forms.ComboBox BoxNivel;
     }
 }

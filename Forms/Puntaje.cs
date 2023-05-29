@@ -21,16 +21,16 @@ namespace SebraOut
 
         private void Puntaje_Load(object sender, EventArgs e)
         {
-            lista_Puntaje.Columns.Add("Nombre", 130);
-            lista_Puntaje.Columns.Add("Email", 130);
+            lista_Puntaje.Columns.Add("Usuario", 130);
+            
             lista_Puntaje.Columns.Add("Puntaje", 130);
 
-            var list_Usuarios = connection.List_Usuarios();
+            var lst_Puntaje = connection.List_Puntaje();
 
-            for (int i = 0; i < list_Usuarios.Count; i++)
+            for (int i = 0; i < lst_Puntaje.Count; i++)
             {
-                lista_Puntaje.Items.Add(new ListViewItem(new[] { $"{list_Usuarios[i].Nombre}",
-                    $"{list_Usuarios[i].Email}",$"{list_Usuarios[i].Puntos}" }));
+                lista_Puntaje.Items.Add(new ListViewItem(new[] { $"Usuario #{lst_Puntaje[i].Id}",
+                    $"{lst_Puntaje[i].Puntaje}" }));
             }
         }
 
